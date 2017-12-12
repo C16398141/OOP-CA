@@ -36,6 +36,10 @@ void draw() {
     }
    if(plasmaBall.wstatus == 1) {
     int a=plasmaBall.fire(xcoord,ycoord,diameter);//stars
+    if(a!=70) {
+     stars.get(a).sx=0;
+     stars.get(a).sy=0;
+    }
   }
   if(targetSelect.status == 1) {
     targetSelect.display(xcoord[targetSelect.target-1],ycoord[targetSelect.target-1],diameter[targetSelect.target-1]);
