@@ -17,14 +17,15 @@ class Hand {
    stroke(0);
    x=mouseX;
    y=mouseY;
-   
+   //if the mouse is beyond the arm's stretchability, don't stretch the arm further
    if(mouseY > 500) {
      y=500;
    }
+   //keep the arm above a certain level
    if(mouseY < 400) {
      y=400;
    }
-
+   //drawing the arm
    quad(x+20,y,x-10,600,x-50,600,x-20,y);
    rect(x+set,y-30,40,50);
    rect(x+set+(fingerwidth),y-40,10,35);
