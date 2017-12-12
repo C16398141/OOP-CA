@@ -20,6 +20,8 @@ void setup() {
 void draw() {
   background(20,0.1);
   block();
+  for (int i = 0; i < 60; i++) {
+    stars.get(i).display();
   leftHand.display();
   mesh();
   
