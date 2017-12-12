@@ -1,7 +1,14 @@
 Hand leftHand;
+import ddf.minim.*;
+Minim minim;
+AudioPlayer music;
 
 void setup() {
   size(800,600);
+  minim= new Minim(this);
+  music = minim.loadFile("Best_Dramatic_music_ever.mp3");
+  music.play();
+  music.rewind();
   leftHand = new Hand();
 }
   
