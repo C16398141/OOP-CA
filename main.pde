@@ -132,8 +132,25 @@ void buttons() {
   fill(targetSelect.r,targetSelect.g,targetSelect.b);
   ellipse(745,305,80,80);
   ellipse(750,300,80,80);
-  
+ 
+  stroke(255);
+  strokeWeight(2);
+  textSize(10);
+  fill(0);
+  if(targetSelect.g==0) {
+    text("Target Selected",710,305);
+  }
+  else {
+    text("Select Target",720,305);
+  }
+  stroke(0);
   fill(255);
   ellipse(745,455,80,80);
   ellipse(750,450,80,80);
+  textSize(20);
+  fill(0);
+  text("Fire",732,456);
+  strokeWeight(1);
+  fill(255);
+  
 }
