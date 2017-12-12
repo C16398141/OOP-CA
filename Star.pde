@@ -15,8 +15,7 @@ class Star {
   void display() {
     fill(255);
     //if(status==1){
-      //if(outside block change opagueness
-      //if outside zoom
+      //if outside zoom border make small
       if(sx <= 120 || sx >= 680 || sy <= 90)
       {
        diameter = 2; 
