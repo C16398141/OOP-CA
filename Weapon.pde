@@ -31,11 +31,10 @@ class Weapon {
    v=70;
   }
 
-int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coordinates and possibly sizes*/
-   /*stars.get(0);
+int fire(float[] sx, float[] sy, float[] sd) {//ArrayList<Star> stars , pass star coordinates and sizes*/
+   //stars.get(0).sx;
    print(stars);*/
    //if plasmaBall isn't charged
-   //int sx = stars.get(i)sx;
    if(x <= z){
      c=mouseX;
      d=mouseY;
@@ -50,9 +49,8 @@ int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coor
    if(mouseY < 400) {
      d=400;
    }
-   //if plasmaBall is fully charged
+   //if plasmaBall is fully charged move in desired pattern, decreasing its size at the same time
    if(x >= z){
-     //call reload()
      int g=0;
      if(z<95) {
        g=255;
@@ -76,7 +74,7 @@ int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coor
     //become smaller
     a=a+5;
     b=b-5;
-    //if (x and y coords of match a star element, explode star, change star element attributes, and stop drawing ball 
+    //if (x and y coords of match a star element,return v to change the relevant star's element attributes, and stop drawing ball 
     for (int i = 0; i < 60; i++) {
       //if((sx[i]-float(c+a))>5 && (sy[i]-float(d+b))<5)
       if(dist(sx[i], sy[i], c+a, d+b)<sd[i]) {
@@ -93,7 +91,7 @@ int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coor
    y++;
    
   
-   //if plasmaBall has no more use
+   //if plasmaBall has no more use reset values
    if(reloadTime==250)
    {
      wstatus=0;
@@ -102,6 +100,6 @@ int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coor
      b=0;
      z=100;
    }
-   return i;
+   return v;
  }
 }
