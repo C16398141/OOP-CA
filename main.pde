@@ -1,5 +1,8 @@
 Hand leftHand;
 ArrayList<Star> stars;
+float[] xcoord = new float[60];
+float[] ycoord = new float[60];
+float[] diameter = new float[60];
 import ddf.minim.*;
 Minim minim;
 AudioPlayer music;
@@ -14,6 +17,9 @@ void setup() {
   stars = new ArrayList<Star>();
   for (int i = 0; i < 60; i++) {
     stars.add(new Star(random(120,800),random(0,400),10,1));
+    xcoord[i] = stars.get(i).sx;
+    ycoord[i] = stars.get(i).sy;
+    diameter[i] = stars.get(i).diameter;
     }
 }
   
