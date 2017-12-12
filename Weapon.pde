@@ -9,6 +9,7 @@ class Weapon {
  int e;
  int f;
  int i;
+ int v;
  int wstatus;
  int reloadTime;
  float rateforContact;
@@ -27,6 +28,7 @@ class Weapon {
    e=0;
    f=0;
    i=0;
+   v=70;
   }
 
 int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coordinates and possibly sizes*/
@@ -78,10 +80,11 @@ int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coor
     for (int i = 0; i < 60; i++) {
       //if((sx[i]-float(c+a))>5 && (sy[i]-float(d+b))<5)
       if(dist(sx[i], sy[i], c+a, d+b)<sd[i]) {
+       v=i;
        reloadTime=250;
     }
   }
-   }
+}
    
    fill(150);
    //if not at max size, draw includes mouseX and Y, later change independent on trajectory
