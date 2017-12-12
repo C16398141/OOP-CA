@@ -1,5 +1,6 @@
 Hand leftHand;
 Weapon plasmaBall;
+Button targetSelect;
 ArrayList<Star> stars;
 float[] xcoord = new float[60];
 float[] ycoord = new float[60];
@@ -16,6 +17,7 @@ void setup() {
   music.rewind();
   leftHand = new Hand();
   plasmaBall = new Weapon();
+  targetSelect = new Button();
   stars = new ArrayList<Star>();
   for (int i = 0; i < 60; i++) {
     stars.add(new Star(random(120,800),random(0,400),10,1));
@@ -35,15 +37,25 @@ void draw() {
     if(plasmaBall.wstatus == 1) {
     int a=plasmaBall.fire(xcoord,ycoord,diameter);//stars
   }
+  if(targetSelect.status == 1) {
+    targetSelect.display(xcoord[targetSelect.target-1],ycoord[targetSelect.target-1],diameter[targetSelect.target-1]);
+  }
   leftHand.display();
   mesh();
   
 }
 
 void mouseClicked() {
+  if(dist(mouseX, mouseY, 750, 300)<80) {
+    targetSelect.status = 1;
+    targetSelect.target++;
+    targetSelect.r = 255;
+    targetSelect.g = targetSelect.b = 0;
+    }
+    else{
   plasmaBall.wstatus = 1;
   }
-
+}
 void mesh() {
   fill(255);
   
