@@ -83,5 +83,22 @@ int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coor
   }
    }
    
+   fill(150);
+   //if not at max size, draw includes mouseX and Y, later change independent on trajectory
+   ellipse(c+a,d+b,x,y);
+   x++;
+   y++;
+   
+  
+   //if plasmaBall has no more use
+   if(reloadTime==250)
+   {
+     wstatus=0;
+     reloadTime=0;
+     x=y=a=0;
+     b=0;
+     z=100;
+   }
+   return i;
  }
 }
