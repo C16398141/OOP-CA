@@ -1,4 +1,5 @@
 Hand leftHand;
+Weapon plasmaBall;
 ArrayList<Star> stars;
 float[] xcoord = new float[60];
 float[] ycoord = new float[60];
@@ -14,6 +15,7 @@ void setup() {
   music.play();
   music.rewind();
   leftHand = new Hand();
+  plasmaBall = new Weapon();
   stars = new ArrayList<Star>();
   for (int i = 0; i < 60; i++) {
     stars.add(new Star(random(120,800),random(0,400),10,1));
@@ -28,10 +30,18 @@ void draw() {
   block();
   for (int i = 0; i < 60; i++) {
     stars.get(i).display();
+    }
+    if(plasmaBall.wstatus == 1) {
+    int a=plasmaBall.fire(xcoord,ycoord,diameter);//stars
+  }
   leftHand.display();
   mesh();
   
 }
+
+void mouseClicked() {
+  plasmaBall.wstatus = 1;
+  }
 
 void mesh() {
   fill(255);
