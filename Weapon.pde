@@ -28,3 +28,60 @@ class Weapon {
    f=0;
    i=0;
   }
+
+int fire(float[] sx, float[] sy, float[] sd) {//ArrayList stars /*pass star coordinates and possibly sizes*/
+   /*stars.get(0);
+   print(stars);*/
+   //if plasmaBall isn't charged
+   //int sx = stars.get(i)sx;
+   if(x <= z){
+     c=mouseX;
+     d=mouseY;
+   }
+   reloadTime++;
+   
+   //if mouse too low
+   if(mouseY > 500) {
+     d=500;
+   }
+   //if mouse too high
+   if(mouseY < 400) {
+     d=400;
+   }
+   //if plasmaBall is fully charged
+   if(x >= z){
+     //call reload()
+     int g=0;
+     if(z<95) {
+       g=255;
+     }
+     stroke(0);
+    fill(255,0,0);
+    rect(30,200,50,250);
+    ellipse(55,450,50,10);
+    fill(255);
+    if(250-(z*2)<250){
+      rect(30,200,50,250-(z*2.5));
+    }
+   /*else {
+      fill(255);
+      rect(30,200,50,250);
+    }*/
+    fill(255,g,g);
+    ellipse(55,200,50,20);
+     //move away
+    z=x=y=y-2;
+    //become smaller
+    a=a+5;
+    b=b-5;
+    //if (x and y coords of match a star element, explode star, change star element attributes, and stop drawing ball 
+    for (int i = 0; i < 60; i++) {
+      //if((sx[i]-float(c+a))>5 && (sy[i]-float(d+b))<5)
+      if(dist(sx[i], sy[i], c+a, d+b)<sd[i]) {
+       reloadTime=250;
+    }
+  }
+   }
+   
+ }
+}
