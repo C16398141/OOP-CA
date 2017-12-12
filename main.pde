@@ -1,4 +1,5 @@
 Hand leftHand;
+ArrayList<Star> stars;
 import ddf.minim.*;
 Minim minim;
 AudioPlayer music;
@@ -10,6 +11,10 @@ void setup() {
   music.play();
   music.rewind();
   leftHand = new Hand();
+  stars = new ArrayList<Star>();
+  for (int i = 0; i < 60; i++) {
+    stars.add(new Star(random(120,800),random(0,400),10,1));
+    }
 }
   
 void draw() {
