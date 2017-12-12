@@ -31,7 +31,9 @@ Instructions
   
   How The Project Was Coded
   
-  I began by creating classes for the objects that I planned on implementing. For each of those classes, methods were made if they had functions to fulfill. In the main file I displayed some of the borders and design elements using methods. I set out with a vision of recreating iron man's pulse hand cannon.  I was happy that the user had freedom to control the hand's movement and that on firing, there was a charging process like the movies. I liked the trajectory of the plasmaball and that the user could see when they could fire again. (I actually had a rapid fire function at one point which erradicated the stars quite effectively but it didn't make sense to charge multiple plasmaballs at the same time.)
+  I began by creating classes for the objects that I planned on implementing. For each of those classes, methods were made if they had functions to fulfill including display and fire etc. In the main file I displayed some of the borders and design elements using methods. I created an arraylist of star objects of randomly created values. I passed those values through functions to check if collisions happened or to even select a certain star as a target. I added dramatic music as there's no higher level of drama than destroying galactic raging hot billion year old beasts. On clicking I made the code check whether it was for a button or the default firing before calling methods.
+  
+  I set out with a vision of recreating iron man's pulse hand cannon.  I was happy that the user had freedom to control the hand's movement and that on firing, there was a charging process like the movies. I liked the trajectory of the plasmaball and that the user could see when they could fire again. (I actually had a rapid fire function at one point which erradicated the stars quite effectively but it didn't make sense to charge multiple plasmaballs at the same time.)
   
   Problems and Decision Making
   
