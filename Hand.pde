@@ -17,8 +17,15 @@ class Hand {
    stroke(0);
    x=mouseX;
    y=mouseY;
+   
+   if(mouseY > 500) {
+     y=500;
+   }
+   if(mouseY < 400) {
+     y=400;
+   }
 
-  quad(x+20,y,x-10,600,x-50,600,x-20,y);
+   quad(x+20,y,x-10,600,x-50,600,x-20,y);
    rect(x+set,y-30,40,50);
    rect(x+set+(fingerwidth),y-40,10,35);
    rect(x+set+(fingerwidth*2),y-45,10,40);
