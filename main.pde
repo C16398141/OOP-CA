@@ -1,3 +1,4 @@
+//declaring objects, arraylists etc
 Hand leftHand;
 Weapon plasmaBall;
 Button targetSelect;
@@ -11,16 +12,20 @@ AudioPlayer music;
 
 void setup() {
   size(800,600);
+  //play the desired music file
   minim= new Minim(this);
   music = minim.loadFile("Best_Dramatic_music_ever.mp3");
   music.play();
   music.rewind();
+  //initialising objects
   leftHand = new Hand();
   plasmaBall = new Weapon();
   targetSelect = new Button();
   stars = new ArrayList<Star>();
+  //fill the arraylist including some randomly generated data
   for (int i = 0; i < 60; i++) {
     stars.add(new Star(random(120,800),random(0,400),10,1));
+    //put that data into arrays to pass through methods after the arraylist wouldn't work perfectly when passed through directly
     xcoord[i] = stars.get(i).sx;
     ycoord[i] = stars.get(i).sy;
     diameter[i] = stars.get(i).diameter;
@@ -28,19 +33,24 @@ void setup() {
 }
   
 void draw() {
+//draw the design elements
   background(20,0.1);
   block();
   reload();
+  //display all of the stars
   for (int i = 0; i < 60; i++) {
     stars.get(i).display();
     }
+    // if the plasmaball has been clicked to fire, fire
    if(plasmaBall.wstatus == 1) {
-    int a=plasmaBall.fire(xcoord,ycoord,diameter);//stars
+    int a=plasmaBall.fire(xcoord,ycoord,diameter);//pass the star's values to check for collisions
+    //if the returned value is a real star object move them to the dead zone
     if(a!=70) {
      stars.get(a).sx=0;
      stars.get(a).sy=0;
     }
   }
+  //select a target (the target being a star)
   if(targetSelect.status == 1) {
     targetSelect.display(xcoord[targetSelect.target-1],ycoord[targetSelect.target-1],diameter[targetSelect.target-1]);
   }
@@ -52,6 +62,7 @@ void draw() {
 }
 
 void mouseClicked() {
+//if the mouse clicks on this button, change the status which will call its method above inside draw()
   if(dist(mouseX, mouseY, 750, 300)<80) {
     targetSelect.status = 1;
     targetSelect.target++;
@@ -59,10 +70,11 @@ void mouseClicked() {
     targetSelect.g = targetSelect.b = 0;
     }
     else{
+    //else change the status which will call its method above inside draw()
   plasmaBall.wstatus = 1;
   }
 }
-
+//design elements methods
 void mesh() {
   fill(255);
   
@@ -70,6 +82,7 @@ void mesh() {
   ellipse(400,600,700,100);
 }
 
+//zoom method
 void block() {
   fill(0);
   stroke(255);
@@ -96,6 +109,7 @@ void block() {
   float lsize=5;
   int i=0;
   
+  //creates coordinate graph
   stroke(255);
   line(space,90,space,480);
   line(680,480,space,480);
@@ -114,19 +128,18 @@ void block() {
     line(space+(avGap*i),height-space,space+(avGap*i),height-space+lsize);
   }
 }
-
+//displays time left measure before finished reloading
  void reload() {
   stroke(0);
   fill(255);
   rect(30,200,50,250);
   ellipse(55,200,50,20);
   ellipse(55,450,50,10);
-  //if fired
   
   textSize(10);
     text("Reload Time",30,470);
 }
-
+//displays buttons whic have variables dependent on objects' variables
 void buttons() {
  stroke(0);
   fill(255);
@@ -142,9 +155,11 @@ void buttons() {
   textSize(10);
   fill(0);
   if(targetSelect.g==0) {
+  //after button is activated
     text("Target Selected",710,305);
   }
   else {
+  //before button is clicked
     text("Select Target",720,305);
   }
   stroke(0);
