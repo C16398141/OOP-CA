@@ -1,10 +1,14 @@
+Hand leftHand;
+
 void setup() {
   size(800,600);
+  leftHand = new Hand();
 }
   
 void draw() {
   background(20,0.1);
   block();
+  leftHand.display();
   mesh();
   
 }
