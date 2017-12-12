@@ -11,4 +11,17 @@ class Star {
    this.diameter = diameter;
    this.status = status;
   }
+  
+  void display() {
+    fill(255);
+    //if(status==1){
+      //if(outside block change opagueness
+      //if outside zoom
+      if(sx <= 120 || sx >= 680 || sy <= 90)
+      {
+       diameter = 2; 
+      }
+    ellipse(sx,sy,diameter,diameter);
+    
+  }
 }
