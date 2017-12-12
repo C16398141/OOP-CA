@@ -28,6 +28,7 @@ void setup() {
 void draw() {
   background(20,0.1);
   block();
+  reload();
   for (int i = 0; i < 60; i++) {
     stars.get(i).display();
     }
@@ -59,3 +60,15 @@ void block() {
  line(680,90,680,510);
  rect(120,90,560,420);
  }
+ 
+ void reload() {
+  stroke(0);
+  fill(255);
+  rect(30,200,50,250);
+  ellipse(55,200,50,20);
+  ellipse(55,450,50,10);
+  //if fired
+  
+  textSize(10);
+    text("Reload Time",30,470);
+}
