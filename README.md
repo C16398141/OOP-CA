@@ -7,8 +7,8 @@ https://www.youtube.com/watch?v=txmhuPwwiiw
 
 Embedded Video:
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://txmhuPwwiiw" target="_blank"><img src="http://img.youtube.com/vi/https://txmhuPwwiiw/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=txmhuPwwiiw" target="_blank"><img src="http://img.youtube.com/vi/txmhuPwwiiw/0.jpg" 
+alt="OOP Assignment 1" width="240" height="180" border="10" /></a>
 
 
 Instructions
