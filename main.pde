@@ -128,7 +128,7 @@ void block() {
 }
 
 void buttons() {
-  stroke(0);
+ stroke(0);
   fill(255);
   ellipse(745,155,80,80);
   ellipse(750,150,80,80);
@@ -151,10 +151,11 @@ void buttons() {
   fill(255);
   ellipse(745,455,80,80);
   ellipse(750,450,80,80);
-  textSize(20);
+  textSize(13);
   fill(0);
+  text("Welcome!",720,152);
+  textSize(20);
   text("Fire",732,456);
   strokeWeight(1);
-  fill(255);
-  
+  fill(255); 
 }
