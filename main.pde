@@ -34,12 +34,13 @@ void draw() {
   for (int i = 0; i < 60; i++) {
     stars.get(i).display();
     }
-    if(plasmaBall.wstatus == 1) {
+   if(plasmaBall.wstatus == 1) {
     int a=plasmaBall.fire(xcoord,ycoord,diameter);//stars
   }
   if(targetSelect.status == 1) {
     targetSelect.display(xcoord[targetSelect.target-1],ycoord[targetSelect.target-1],diameter[targetSelect.target-1]);
   }
+  border();
   buttons();
   leftHand.display();
   mesh();
@@ -57,6 +58,7 @@ void mouseClicked() {
   plasmaBall.wstatus = 1;
   }
 }
+
 void mesh() {
   fill(255);
   
@@ -72,8 +74,43 @@ void block() {
  line(120,90,120,510);
  line(680,90,680,510);
  rect(120,90,560,420);
+ fill(20);
+ stroke(255);
+ quad(680,480,700,510,100,510,120,480);
+ fill(0);
+ stroke(255);
+ textSize(28);
+ text("ZOOM x500", 320, 508);
  }
  
+ void border() {
+  float space=120;
+  float averageGap=0;
+  float avGap=0;
+  int no_xElements=0;
+  int no_yElements=0;
+  float lsize=5;
+  int i=0;
+  
+  stroke(255);
+  line(space,90,space,480);
+  line(680,480,space,480);
+  no_yElements=12;
+  no_xElements=25;
+  averageGap=(height-2*space)/no_yElements;
+  avGap=(width-2*space)/no_xElements;
+  for (i=0; i<=no_yElements; i++)
+  {
+    line(space,space+(averageGap*i),space-lsize,space+(averageGap*i));
+    textSize(10);
+    text((no_yElements-i)*10,space-(6*lsize)+4,space+(averageGap*i)+4);
+  }
+  for (i=0; i<=no_xElements; i++)
+  {
+    line(space+(avGap*i),height-space,space+(avGap*i),height-space+lsize);
+  }
+}
+
  void reload() {
   stroke(0);
   fill(255);
