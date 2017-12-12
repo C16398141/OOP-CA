@@ -40,6 +40,7 @@ void draw() {
   if(targetSelect.status == 1) {
     targetSelect.display(xcoord[targetSelect.target-1],ycoord[targetSelect.target-1],diameter[targetSelect.target-1]);
   }
+  buttons();
   leftHand.display();
   mesh();
   
@@ -83,4 +84,19 @@ void block() {
   
   textSize(10);
     text("Reload Time",30,470);
+}
+
+void buttons() {
+  stroke(0);
+  fill(255);
+  ellipse(745,155,80,80);
+  ellipse(750,150,80,80);
+  
+  fill(targetSelect.r,targetSelect.g,targetSelect.b);
+  ellipse(745,305,80,80);
+  ellipse(750,300,80,80);
+  
+  fill(255);
+  ellipse(745,455,80,80);
+  ellipse(750,450,80,80);
 }
